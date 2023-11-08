@@ -34,6 +34,8 @@ under the License.
       <directory></directory>
       <includes>
         <include>.gitignore</include>
+        <include>.vscode/settings.json</include>
+        <include>.vscode/java-formatter.xml</include>
       </includes>
     </fileSet>
   </fileSets>
