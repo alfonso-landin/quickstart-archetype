@@ -4,5 +4,5 @@ Custom version of the maven-archetype-quickstart archetype
 
 Instantiate with:
 ```
-mvn archetype:generate -DarchetypeArtifactId=quickstart-archetype -DarchetypeGroupId=dev.landin.archetypes -DarchetypeVersion=21.1
+mvn archetype:generate -DarchetypeArtifactId=quickstart-archetype -DarchetypeGroupId=dev.landin.archetypes -DarchetypeVersion=25
 ```

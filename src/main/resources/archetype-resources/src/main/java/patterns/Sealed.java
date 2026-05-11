@@ -6,15 +6,15 @@ public sealed interface Sealed {
 
     static int which(Sealed s) {
       return switch(s) {
-      case Uno u -> 1;
-      case Dos d -> 2;
+      case Uno _ -> 1;
+      case Dos _ -> 2;
       };
     }
 
     default int w() {
       return switch(this) {
-      case Uno u -> 1;
-      case Dos d -> 2;
+      case Uno _ -> 1;
+      case Dos _ -> 2;
       };
     }
 }

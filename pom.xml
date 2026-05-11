@@ -7,7 +7,7 @@
 
   <groupId>dev.landin.archetypes</groupId>
   <artifactId>quickstart-archetype</artifactId>
-  <version>21.1</version>
+  <version>25</version>
   <packaging>maven-archetype</packaging>
 
   <name>Archetype - quickstart-archetype</name>
@@ -45,7 +45,7 @@
       <extension>
         <groupId>org.apache.maven.archetype</groupId>
         <artifactId>archetype-packaging</artifactId>
-        <version>3.1.1</version>
+        <version>3.4.0</version>
       </extension>
     </extensions>
     <plugins>
@@ -60,7 +60,7 @@
       <plugins>
         <plugin>
           <artifactId>maven-archetype-plugin</artifactId>
-          <version>3.1.1</version>
+          <version>3.4.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-resources-plugin</artifactId>
@@ -68,11 +68,11 @@
         </plugin>
         <plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>3.12.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.4.2</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -81,22 +81,12 @@
   <profiles>
     <profile>
       <id>deploy-central</id>
-      <distributionManagement>
-        <snapshotRepository>
-          <id>ossrh-s01</id>
-          <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-          <id>ossrh-s01</id>
-          <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-      </distributionManagement>
       <build>
         <plugins>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
-            <version>3.2.1</version>
+            <version>3.3.1</version>
             <executions>
               <execution>
                 <id>attach-sources</id>
@@ -121,7 +111,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>3.0.1</version>
+            <version>3.2.8</version>
             <executions>
               <execution>
                 <id>sign-artifacts</id>
@@ -131,6 +121,15 @@
                 </goals>
               </execution>
             </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.sonatype.central</groupId>
+            <artifactId>central-publishing-maven-plugin</artifactId>
+            <version>0.10.0</version>
+            <extensions>true</extensions>
+            <configuration>
+              <publishingServerId>ossrh-s01</publishingServerId>
+            </configuration>
           </plugin>
         </plugins>
       </build>
